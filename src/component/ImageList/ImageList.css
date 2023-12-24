@@ -1,0 +1,10 @@
+.image-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+
+}
+.heading{
+    display: flex;
+    justify-content: center;
+}

@@ -1,6 +1,8 @@
 import Image from '../Image/Image';
+import ImageDetail from '../ImageDetail/ImageDetail'
 import React, { useEffect, useState } from 'react';
-import axios, { Axios } from 'axios';
+import  axios from 'axios';
+import './ImageList.css';
 
 function ImageList() {
     const [imageList, setImageList] = useState([]);
@@ -9,13 +11,18 @@ function ImageList() {
         const response = await axios.get('https://api.slingacademy.com/v1/sample-data/photos');
         const results = response.data.photos;
         const image = results.map((imgurl)=>{
-          return imgurl.url
+          return {
+            image:imgurl.url,
+            id:imgurl.id,
+            title:imgurl.title,
+            description:imgurl.description
+          }
         })
         
         
         
-        console.log(image);
-        
+        console.log(results);
+        setImageList(image)
         setIsLoading(false);
         
         
@@ -26,11 +33,14 @@ function ImageList() {
    
   return (
     
-    <div>
-      <div>Image list</div>
-      {(isLoading) ? 'Loading...' : 'downloaded' }
-      
-    </div>
+    <>
+      <div className='heading'><h1>Image list</h1></div>
+      <div className='image-list'>
+      {(isLoading) ? 'Loading...' : 
+      imageList.map((p)=><Image image={p.image} id={p.id} key={p.id} title={p.title} description={p.description} />)
+      }
+      </div> 
+    </>
   )
 }
 

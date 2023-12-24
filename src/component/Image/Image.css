@@ -1,0 +1,13 @@
+
+.image{
+    
+    height: 250px;
+    width: 250px;
+    
+    margin: 15px;
+}
+.image img{
+    
+    height: 250px;
+    width: 250px;
+}
