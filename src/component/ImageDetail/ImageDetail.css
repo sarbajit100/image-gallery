@@ -1,0 +1,24 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(61, 61, 224);
+    margin-top: 10%;
+    padding: 10px;
+    height: 300px;
+    width: 50%;
+    border-radius: 10px;
+    margin-left: 25%;
+}
+.image img{
+    border-radius: 10px;
+    height: 270px;
+    
+}
+.detail{
+    padding: 10px;
+    color: aliceblue;
+}
+.detail p{
+    margin-top: 50px;
+    font-size: larger;
+}

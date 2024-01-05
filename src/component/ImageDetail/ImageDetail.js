@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
+import './ImageDetail.css';
 
 function ImageDetail (){
     const[data,setData]=useState();
@@ -14,14 +15,16 @@ function ImageDetail (){
       getData()
     },[])
     return (
-        <div id="singlePhoto">
-                <img src={data?.url} alt="" />
-                <div>
-                    <h1>{data?.title}</h1>
-                    <p>
-                            {data?.description}
-                    </p>
-                </div>
+        <div className="main" id="singlePhoto">
+          <div className="image">
+            <img src={data?.url} alt="" />
+          </div>     
+          <div className="detail">
+            <h1>{data?.title}</h1>
+            <p>
+              {data?.description}
+            </p>
+          </div>
         </div>
     )
 }
